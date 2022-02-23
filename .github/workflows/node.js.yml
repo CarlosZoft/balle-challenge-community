@@ -24,15 +24,13 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
+                  cache: 'npm'
 
-            - name: install yarn
-              run: yarn global add node-gyp
             - name: Install dependencies
-              run: yarn ci
+              run: npm ci
             - name: Build project
-              run: yarn build
+              run: npm run build --if-present
             - name: running tests
-              run: yarn test
+              run: npm test
             - name: running lint
-              run: yarn lint
+              run: npm lint

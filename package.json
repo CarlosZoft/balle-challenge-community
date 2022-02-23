@@ -1,7 +1,7 @@
 {
-    "name": "SyncSeries-Integration-Service",
+    "name": "ballerini-management",
     "version": "1.0.0",
-    "description": "Serviço de integrações com serviços externos",
+    "description": "Api de clientes e usuarios",
     "main": "index.js",
     "scripts": {
         "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
@@ -14,15 +14,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SyncSeries/SyncSeries-Integration-Service.git"
+        "url": "https://github.com/CarlosZoft/balle-challenge-community"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/SyncSeries/SyncSeries-Integration-Service/issues"
+        "url": "https://github.com/CarlosZoft/balle-challenge-community/issues"
     },
-    "homepage": "https://github.com/SyncSeries/SyncSeries-Integration-Service#readme",
+    "homepage": "https://github.com/CarlosZoft/balle-challenge-community#readme",
     "husky": {
         "hooks": {
             "pre-commit": "npm run pretty && npm run lint"

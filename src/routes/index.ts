@@ -1,6 +1,7 @@
+import type { Express } from 'express';
 import test from './test.routes';
 
-const setUpRoutes = (app) => {
+const setUpRoutes = (app: Express) => {
     app.use('/', test);
 };
 

@@ -1,6 +1,6 @@
 const jestConfig = {
     clearMocks: true,
-    collectCoverage: true,
+    collectCoverage: false,
     coverageDirectory: './coverage',
     coveragePathIgnorePatterns: ['/node_modules/'],
     coverageProvider: 'v8',

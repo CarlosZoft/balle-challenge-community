@@ -4,8 +4,11 @@
         "module": "commonjs",
         "target": "ES2021",
         "esModuleInterop": true,
+        "sourceMap": true,
         "allowJs": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true
-    }
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }

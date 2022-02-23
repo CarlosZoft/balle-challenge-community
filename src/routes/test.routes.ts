@@ -1,7 +1,11 @@
-import { Router } from 'express';
+import { RouterOptions, Router, Express } from 'express';
 import { testGet } from '../services';
-const router = Router();
 
-router.get('/', testGet);
+class RouterClass {
+    readonly router: any;
+    constructor(options: RouterOptions) {
+        this.router = Router(options);
+    }
+}
 
-export default router;
+export default new RouterClass({}).router;

@@ -5,7 +5,11 @@ class RouterClass {
     readonly router: any;
     constructor(options: RouterOptions) {
         this.router = Router(options);
+        this.setRoutes();
+    }
+    setRoutes() {
+        this.router.get('/', testGet);
     }
 }
 
-export default new RouterClass({}).router;
+export default RouterClass;

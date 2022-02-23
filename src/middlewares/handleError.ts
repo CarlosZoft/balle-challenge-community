@@ -6,7 +6,7 @@ export default async function (
     _request: Request,
     response: Response,
     _next: NextFunction,
-): Promise<Response<any, Record<string, any>>> {
+): Promise<Response> {
     if (error instanceof Error) {
         return response.status(error.status || 406).json({ error: error.message });
     }

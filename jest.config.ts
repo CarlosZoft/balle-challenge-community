@@ -5,7 +5,7 @@ const jestConfig = {
     coveragePathIgnorePatterns: ['/node_modules/'],
     coverageProvider: 'v8',
     coverageReporters: ['json', 'text', 'lcov', 'clover'],
-    testMatch: ['**/tests/**/index.spec.ts'],
+    testMatch: ['**/__tests__/**/index.spec.ts'],
     preset: 'ts-jest',
     transform: {
         '^.+\\.(ts|tsx)?$': 'ts-jest',

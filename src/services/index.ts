@@ -1,0 +1,1 @@
+export { testGet } from './test';

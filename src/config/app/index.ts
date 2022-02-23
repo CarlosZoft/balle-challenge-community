@@ -1,8 +1,14 @@
-import express from 'express';
-import routes from '../../routes';
-const app = express();
+import express, { Express } from 'express';
+import type { Iapp } from '../../interfaces';
+import setUpRoutes from '../../routes';
 
-//Config of app
-routes(app);
-
-export default app;
+export default class App implements Iapp {
+    readonly app: Express;
+    constructor() {
+        this.app = express();
+        this.setRoutes();
+    }
+    setRoutes() {
+        setUpRoutes(this.app);
+    }
+}

@@ -1,8 +1,7 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { testGet } from '../services';
 const router = Router();
 
-router.get('/', (_request: Request, response: Response) => {
-    response.send('Hello World!');
-});
+router.get('/', testGet);
 
 export default router;

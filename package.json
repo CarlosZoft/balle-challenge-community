@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
-        "start": "tsc && node dist/app.js",
+        "build": "tsc -p tsconfig.json",
+        "start": "tsc && node dist/src/server.js",
         "pretty": "prettier --write \"src/**/*.ts\"",
         "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
         "lint": "eslint . --ext .ts",

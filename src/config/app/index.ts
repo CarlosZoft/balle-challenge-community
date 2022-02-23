@@ -1,8 +1,6 @@
 import express, { Express } from 'express';
-import type { Iapp } from '../../interfaces';
 import setUpRoutes from '../../routes';
-
-export default class App implements Iapp {
+class App {
     readonly app: Express;
     constructor() {
         this.app = express();
@@ -12,3 +10,5 @@ export default class App implements Iapp {
         setUpRoutes(this.app);
     }
 }
+
+export default new App().app;

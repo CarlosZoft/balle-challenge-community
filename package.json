@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
         "build": "tsc -p tsconfig.json",
-        "start": "tsc && node dist/src/server.js",
+        "start": "tsc && node dist/server.js",
         "pretty": "prettier --write \"src/**/*.ts\"",
         "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
         "lint": "eslint . --ext .ts",

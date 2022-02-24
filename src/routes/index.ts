@@ -1,8 +1,8 @@
 import type { Express } from 'express';
-import test from './test.routes';
+import User from './User';
 
 const setUpRoutes = (app: Express) => {
-    app.use('/test', new test({}).router);
+    app.use('/user', new User({}).router);
 };
 
 export default setUpRoutes;

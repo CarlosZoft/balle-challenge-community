@@ -8,4 +8,4 @@ done
 
 echo 'PostgreSQL started'
 
-yarn start 
+yarn dev 

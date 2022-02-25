@@ -2,7 +2,7 @@
     "name": "ballerini-management",
     "version": "1.0.0",
     "description": "Api de clientes e usuarios",
-    "main": "index.js",
+    "main": "server.ts",
     "scripts": {
         "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
         "build": "tsc -p tsconfig.json",
@@ -56,6 +56,7 @@
         "cookie-parser": "^1.4.6",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "express-async-errors": "^3.1.1",
         "pg": "^8.7.3",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.2.44",

@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-import '../database';
+import '../../database';
 import 'reflect-metadata';
 import 'express-async-errors';
 import setUpRoutes from '../../routes';

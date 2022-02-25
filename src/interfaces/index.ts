@@ -1,4 +1,4 @@
 export { default as IApp } from './IApp';
-export { default as IUserService } from './user/IUserService';
-export { default as IUserRoutes } from './user/IUserRoutes';
+export { default as IEnthusiastService } from './entusiasta/IEnthusiastService';
+export { default as IEnthusiastRoutes } from './entusiasta/IEntusiastaRoutes';
 export { IRequest, IResponse } from './IHtpp';

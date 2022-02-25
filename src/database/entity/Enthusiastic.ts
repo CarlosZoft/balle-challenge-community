@@ -2,8 +2,8 @@ import { PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, Entity } fro
 import { v4 as uuid } from 'uuid';
 import { Exclude } from 'class-transformer';
 
-@Entity('users')
-export class User {
+@Entity('Enthusiastic')
+export class EnthusiasticEntity {
     constructor() {
         if (!this.id) {
             this.id = uuid();
@@ -18,8 +18,6 @@ export class User {
     @Exclude()
     @Column()
     password: string;
-    @Column()
-    admin: boolean;
     @CreateDateColumn()
     created_at: Date;
     @UpdateDateColumn()

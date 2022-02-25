@@ -1,7 +1,6 @@
 import express, { Express } from 'express';
-import '../../database';
-import 'reflect-metadata';
 import 'express-async-errors';
+import '../../database';
 import setUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
 import { IApp } from '../../interfaces';

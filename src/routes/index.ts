@@ -1,8 +1,8 @@
 import type { Express } from 'express';
-import User from './User';
+import Entusiasta from './Enthusiast';
 
 const setUpRoutes = (app: Express) => {
-    app.use('/user', new User({}).router);
+    app.use('/enthusiast', new Entusiasta({}).router);
 };
 
 export default setUpRoutes;

@@ -1,6 +1,6 @@
 import { IRequest } from '../IHtpp';
 
-export default interface IUserService {
+export default interface IEnthusiastRoutes {
     readonly repository: any;
 
     create({ request, response }: IRequest): void;

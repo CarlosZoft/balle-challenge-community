@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Serie {
+  id   String @id @default(uuid())
+  name String @unique
+  description String
+  imageUrl String
+  createdAt DateTime @default(now())
+  CommunitySerie CommunitySerie[]
+  @@map("serie")
+}
+
+model CommunitySerie {
+  id   String @id @default(uuid())
+  id_community String
+  community Community @relation(fields: [id_community], references: [id])
+  id_serie String
+  serie Serie @relation(fields: [id_serie], references: [id])
+}
+
+model Community {
+  id   String @id @default(uuid())
+  name String
+  description String
+  imageUrl String
+  createdAt DateTime @default(now())
+
+  @@map("community")
+  EnthusiastCommunity EnthusiastCommunity[]
+  CommunitySerie CommunitySerie[]
+}
+
+model EnthusiastCommunity {
+  id   String @id @default(uuid())
+  id_enthusiast String
+  enthusiast Enthusiast @relation(fields: [id_enthusiast], references: [id])
+  id_community String
+  community Community @relation(fields: [id_community], references: [id])
+  @@map("enthusiast_community")
+} 
+
+model Enthusiast {
+  id   String @id @default(uuid())
+  name String
+  email String
+  password String
+  createdAt DateTime @default(now())
+
+  @@map("enthusiast")
+  EnthusiastCommunity EnthusiastCommunity[]
+} 
+

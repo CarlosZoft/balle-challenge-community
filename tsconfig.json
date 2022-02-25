@@ -1,8 +1,10 @@
 {
     "compilerOptions": {
-        "outDir": "./dist",
+        "outDir": "dist",
         "module": "commonjs",
+        "strict": true,
         "target": "ES2021",
+        "lib": ["esnext"],
         "esModuleInterop": true,
         "sourceMap": true,
         "allowJs": true,

@@ -1,12 +1,5 @@
-class Database {
-    constructor() {
-        this.connect();
-    }
-    async connect() {
-        console.log('Trying to connect to database...');
-        const statusOfconnection = () => {};
-        statusOfconnection ? console.log('Database connected') : console.log('Database not connected');
-    }
-}
+import { PrismaClient } from '@prisma/client';
 
-export default new Database();
+const prismaClient = new PrismaClient();
+
+export default prismaClient;

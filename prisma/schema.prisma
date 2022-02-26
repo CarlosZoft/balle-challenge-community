@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,54 +7,78 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category {
+  name        String   @id @unique
+  description String
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  serieCategory SerieCategory[]
+
+  @@map("category")
+}
+
+model SerieCategory {
+  id            String     @id @default(uuid())
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  id_category String
+  id_serie  String
+  serie     Serie  @relation(fields: [id_serie], references: [id])
+  category    Category @relation(fields: [id_category], references: [name])
+
+  @@map("serie_category")
+}
+
 
 model Serie {
-  id   String @id @default(uuid())
-  name String @unique
+  id          String      @id @default(uuid())
+  name        String      @unique
   description String
-  imageUrl String
-  createdAt DateTime @default(now())
-  CommunitySerie CommunitySerie[]
+  imageUrl    String
+  yearLaunch  DateTime
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+  community   Community[]
+  serieCategory SerieCategory[]
+
   @@map("serie")
 }
 
-model CommunitySerie {
-  id   String @id @default(uuid())
-  id_community String
-  community Community @relation(fields: [id_community], references: [id])
-  id_serie String
-  serie Serie @relation(fields: [id_serie], references: [id])
-}
-
 model Community {
-  id   String @id @default(uuid())
-  name String
-  description String
-  imageUrl String
-  createdAt DateTime @default(now())
-
+  id                  String                @id @default(uuid())
+  name                String
+  description         String
+  imageUrl            String
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  serieId             String
+  serie               Serie                 @relation(fields: [serieId], references: [id])
+  enthusiastCommunity EnthusiastCommunity[]
+  
   @@map("community")
-  EnthusiastCommunity EnthusiastCommunity[]
-  CommunitySerie CommunitySerie[]
 }
 
 model EnthusiastCommunity {
-  id   String @id @default(uuid())
+  id            String     @id @default(uuid())
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
   id_enthusiast String
-  enthusiast Enthusiast @relation(fields: [id_enthusiast], references: [id])
-  id_community String
-  community Community @relation(fields: [id_community], references: [id])
+  id_community  String
+  community     Community  @relation(fields: [id_community], references: [id])
+  enthusiast    Enthusiast @relation(fields: [id_enthusiast], references: [id])
+
   @@map("enthusiast_community")
-} 
+}
 
 model Enthusiast {
-  id   String @id @default(uuid())
-  name String
-  email String
-  password String
-  createdAt DateTime @default(now())
+  id                  String                @id @default(uuid())
+  name                String 
+  email               String                @unique
+  password            String
+  imageUrl            String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  enthusiastCommunity EnthusiastCommunity[]
 
   @@map("enthusiast")
-  EnthusiastCommunity EnthusiastCommunity[]
-} 
-
+}

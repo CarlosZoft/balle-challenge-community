@@ -1,0 +1,1 @@
+export { IApp } from './IApp';

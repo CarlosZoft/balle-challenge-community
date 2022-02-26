@@ -3,13 +3,14 @@ import { IServiceExecuteCreate } from './interface';
 import { IEnthusiastCreate } from '../../interfaces';
 import { hash } from 'bcrypt';
 import { HttpException } from '../../error';
+import { Enthusiast } from '@prisma/client';
 
 export class CreateEnthusiastService implements IServiceExecuteCreate {
-    readonly repository: any;
+    readonly repository;
     constructor() {
         this.repository = database.enthusiast;
     }
-    async execute({ name, email, password, imageUrl }: IEnthusiastCreate): Promise<any> {
+    async execute({ name, email, password, imageUrl }: IEnthusiastCreate): Promise<Enthusiast> {
         if (!name || !email || !password) {
             throw new HttpException('Missing required fields', 400);
         }

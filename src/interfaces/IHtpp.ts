@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 export interface IResponse {
     statusCode: number;
-    body: any;
+    body: object;
 }
 export interface IRequest {
     response: Response;

@@ -1,6 +1,5 @@
 import { IEnthusiastCreate } from '../../../interfaces';
+import { Enthusiast } from '@prisma/client';
 export interface IServiceExecuteCreate {
-    readonly repository: any;
-
-    execute(enthusiast: IEnthusiastCreate): Promise<void>;
+    execute(enthusiast: IEnthusiastCreate): Promise<Enthusiast>;
 }

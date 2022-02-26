@@ -1,5 +1,9 @@
+import { Request, Response } from 'express';
 import { ControllerHandler } from '../interface';
-import { IRequest } from '../../interfaces';
 export class EditEnthusiast implements ControllerHandler {
-    async handle({ request, response }: IRequest): Promise<void> {}
+    async handle(request: Request, response: Response): Promise<void> {
+        /**
+         * Not implemented yet
+         */
+    }
 }

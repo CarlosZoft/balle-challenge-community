@@ -9,6 +9,7 @@ export default async function (
 ): Promise<Response> {
     if (error instanceof Error) {
         return response.status(error.status || 406).json({ error: error.message });
+        _next(error);
     }
     return response.status(500).json({
         status: '500',

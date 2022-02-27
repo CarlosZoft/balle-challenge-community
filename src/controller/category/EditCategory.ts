@@ -9,5 +9,7 @@ export class EditCategory implements ControllerHandler {
         const service = new EditCategoryService();
 
         const category = await service.execute(id, { name, description });
+
+        response.status(200).json(category);
     }
 }

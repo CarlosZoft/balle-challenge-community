@@ -14,10 +14,10 @@ class Enthusiast implements IEnthusiastRoutes {
     }
     setUpRoutes() {
         this.router.get('/', this.findController.handle);
-        this.router.get('/:email', this.findController.handle);
+        this.router.get('/:id', this.findController.handle);
         this.router.post('/', this.createController.handle);
-        this.router.put('/:email', this.editController.handle);
-        this.router.delete('/:email', this.deleteController.handle);
+        this.router.put('/:id', this.editController.handle);
+        this.router.delete('/:id', this.deleteController.handle);
     }
 }
 

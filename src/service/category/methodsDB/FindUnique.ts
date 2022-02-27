@@ -4,10 +4,11 @@ import { ICategoryFind } from '../interface';
 import { IServiceExecuteCategory } from '../interface';
 
 export class FindUnique implements IServiceExecuteCategory {
-    async execute(data: ICategoryFind): Promise<Category | null> {
+    async execute({ id, name }: ICategoryFind): Promise<Category | null> {
         return await database.category.findUnique({
             where: {
-                name: data.id,
+                id,
+                name,
             },
         });
     }

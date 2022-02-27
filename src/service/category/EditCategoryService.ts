@@ -10,9 +10,14 @@ export class EditCategoryService {
             throw new HttpException('Id is required', 400);
         }
 
-        const existsEntusiast = await new FindUnique().execute({ id });
-        if (existsEntusiast) {
-            throw new HttpException(`Category ${id} already exists`, 404);
+        const existsCategory = await new FindUnique().execute({ id });
+        if (!existsCategory) {
+            throw new HttpException(`Category ${name} not found`, 404);
+        }
+
+        const nameAlreadyExists = await new FindUnique().execute({ name });
+        if (nameAlreadyExists) {
+            throw new HttpException(`Category ${name} already exists`, 400);
         }
 
         const dataEdit: ICategoryEdit = {};

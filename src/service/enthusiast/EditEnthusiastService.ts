@@ -15,9 +15,15 @@ export class EditEnthusiastService {
         if (!existsEntusiast) {
             throw new HttpException('Enthusiast not found', 404);
         }
+
+        const existsEmail = await new FindUnique().execute({ email });
+        if (existsEmail) {
+            throw new HttpException('Email already in use', 400);
+        }
+
         const dataEdit: IEnthusiastEdit = {};
         if (name) dataEdit.name = name;
-        if (email) dataEdit.name = email;
+        if (email) dataEdit.email = email;
         if (password) dataEdit.password = await hash(password, 8);
         if (imageUrl) dataEdit.imageUrl = imageUrl;
 

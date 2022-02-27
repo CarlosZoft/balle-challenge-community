@@ -9,5 +9,6 @@ export interface ICategoryEdit {
 }
 
 export interface ICategoryFind {
-    id: string;
+    id?: string;
+    name?: string;
 }

@@ -48,9 +48,8 @@ model Community {
   id                  String                @id @default(uuid())
   name                String
   description         String
-  imageUrl            String
+  imageUrl            String?
   owner  String
-  enthusiast       Enthusiast @relation(fields: [owner], references: [id])
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
   serieId             String
@@ -81,7 +80,6 @@ model Enthusiast {
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
   enthusiastCommunity EnthusiastCommunity[]
-  community          Community[]
 
   @@map("enthusiast")
 }

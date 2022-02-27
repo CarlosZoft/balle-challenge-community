@@ -1,2 +1,4 @@
-export { IRequest, IResponse, IMiddlewareHandler } from './IHtpp';
+export { IMiddlewareHandler } from './IHtpp';
 export { IEnthusiastCreate } from './enthusiast';
+export { ICommunityCreate } from './community';
+export { ICategoryCreate } from './category';

@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
-import { DeleteEnthusiastService } from '../../service';
+import { FindEnthusiastService } from '../../service';
 import { ControllerHandler } from '../interface';
-export class DeleteEnthusiast implements ControllerHandler {
+
+export class FindCategory implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {
         const { email, id } = request.params;
 
-        const service = new DeleteEnthusiastService();
+        const service = new FindEnthusiastService();
 
         const result = await service.execute({ email, id });
 

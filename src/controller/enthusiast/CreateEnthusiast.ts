@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { ControllerHandler } from '../interface';
-import { IEnthusiastCreate, IRequest } from '../../interfaces';
+import { IEnthusiastCreate } from '../../interfaces';
 import { CreateEnthusiastService } from '../../service';
 
 export class CreateEnthusiast implements ControllerHandler {

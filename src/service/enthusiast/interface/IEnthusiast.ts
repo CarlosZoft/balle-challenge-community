@@ -6,8 +6,9 @@ export interface IEnthusiastCreate {
 }
 
 export interface IEnthusiastEdit {
+    id?: string;
     name?: string;
-    email: string;
+    email?: string;
     password?: string;
     imageUrl?: string;
 }

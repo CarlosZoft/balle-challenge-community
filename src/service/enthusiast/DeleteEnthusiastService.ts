@@ -4,7 +4,7 @@ import { HttpException } from '../../error';
 import { IEnthusiastFind } from './interface';
 
 export class DeleteEnthusiastService {
-    async execute({ email, id }: IEnthusiastFind): Promise<Enthusiast | any> {
+    async execute({ email, id }: IEnthusiastFind): Promise<Enthusiast> {
         if (!email && !id) {
             throw new HttpException('Email or id is required', 400);
         }

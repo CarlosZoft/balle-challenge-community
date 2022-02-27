@@ -1,23 +1,17 @@
-import database from '../../database';
-import { IServiceExecuteCreate } from './interface';
-import { IEnthusiastCreate } from '../../interfaces';
+import { Create, FindUnique } from './methodsDB';
+import { Enthusiast } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { HttpException } from '../../error';
-import { Enthusiast } from '@prisma/client';
+import { IEnthusiastCreate } from '../../interfaces';
+import { IServiceExecuteCreate } from './interface';
 
 export class CreateEnthusiastService implements IServiceExecuteCreate {
-    readonly repository;
-    constructor() {
-        this.repository = database.enthusiast;
-    }
-    async execute({ name, email, password, imageUrl }: IEnthusiastCreate): Promise<Enthusiast> {
+    async execute({ name, email, password, imageUrl }: IEnthusiastCreate): Promise<Enthusiast | any> {
         if (!name || !email || !password) {
             throw new HttpException('Missing required fields', 400);
         }
 
-        const enthusiastAlreadyExists = await this.repository.findUnique({
-            where: { email },
-        });
+        const enthusiastAlreadyExists = await new FindUnique().execute({ email });
 
         if (enthusiastAlreadyExists) {
             throw new HttpException('Enthusiast already exists', 400);
@@ -25,10 +19,6 @@ export class CreateEnthusiastService implements IServiceExecuteCreate {
 
         const passwordHash = await hash(password, 8);
 
-        const enthusiast = await this.repository.create({
-            data: { name, email, password: passwordHash, imageUrl },
-        });
-
-        return enthusiast;
+        return await new Create().execute({ name, email, password: passwordHash, imageUrl });
     }
 }

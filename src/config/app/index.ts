@@ -1,7 +1,8 @@
-import express, { Express } from 'express';
+import express from 'express';
+import type { Express } from 'express';
 import SetUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
-import { IApp } from '../interface';
+import type { IApp } from '../interface';
 import '../../database';
 import 'express-async-errors';
 class App implements IApp {

@@ -1,1 +1,1 @@
-export { ControllerHandler } from './IControllerHandler';
+export type { ControllerHandler } from './IControllerHandler';

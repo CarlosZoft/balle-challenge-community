@@ -12,7 +12,7 @@
         "no-loops/no-loops": 2, // 2 means throw an ERROR
         "no-console": 1,
         "prettier/prettier": 2,
-        "@typescript-eslint/no-unused-vars": 0
+        "@typescript-eslint/no-unused-vars": 1
     },
     "ignorePatterns": ["node_modules", "dist", "Dockerfile", "docker-compose.yml", "postgres"]
 }

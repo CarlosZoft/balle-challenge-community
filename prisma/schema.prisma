@@ -8,27 +8,17 @@ datasource db {
 }
 
 model Category {
-  name        String   @id @unique
+  id          String      @id @default(uuid())
+  name        String   @unique
   description String
+  // Date log
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
-  serieCategory SerieCategory[]
+  // Relationships
+  Series Serie[]
 
   @@map("category")
 }
-
-model SerieCategory {
-  id            String     @id @default(uuid())
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  id_category String
-  id_serie  String
-  serie     Serie  @relation(fields: [id_serie], references: [id])
-  category    Category @relation(fields: [id_category], references: [name])
-
-  @@map("serie_category")
-}
-
 
 model Serie {
   id          String      @id @default(uuid())
@@ -36,11 +26,12 @@ model Serie {
   description String
   imageUrl    String
   yearLaunch  DateTime
+  // Date log
   createdAt   DateTime           @default(now())
   updatedAt   DateTime           @updatedAt
-  community   Community[]
-  serieCategory SerieCategory[]
-
+  // Relationships
+  categories Category[]
+  comunities   Community[]
   @@map("serie")
 }
 
@@ -49,26 +40,15 @@ model Community {
   name                String
   description         String
   imageUrl            String?
-  owner  String
+  id_enthusiast_owner  String
+  id_serie             String
+  serie     Serie       @relation(fields: [id_serie], references: [id])
+  // Date log
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
-  serieId             String
-  serie               Serie                 @relation(fields: [serieId], references: [id])
-  enthusiastCommunity EnthusiastCommunity[]
-  
+  // Relationships
+  enthusiasts Enthusiast[]
   @@map("community")
-}
-
-model EnthusiastCommunity {
-  id            String     @id @default(uuid())
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  id_enthusiast String
-  id_community  String
-  community     Community  @relation(fields: [id_community], references: [id])
-  enthusiast    Enthusiast @relation(fields: [id_enthusiast], references: [id])
-
-  @@map("enthusiast_community")
 }
 
 model Enthusiast {
@@ -77,9 +57,10 @@ model Enthusiast {
   email               String                @unique
   password            String
   imageUrl            String?
+  // Date log
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
-  enthusiastCommunity EnthusiastCommunity[]
-
+  // Relationships
+  community Community[]
   @@map("enthusiast")
 }

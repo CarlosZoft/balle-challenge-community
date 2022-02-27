@@ -1,0 +1,31 @@
+entities :
+
+Community
+Serie
+Category
+Enthusiast
+
+
+relationships :
+
+have
+belongs
+participate
+
+
+vision : 
+
+Enthusiast - Community - done
+
+- Min - 0:N
+- Max - N:M
+
+Serie - Community - done
+
+- Min - 0:N
+- Max - N:M
+
+Category - Serie - done
+
+- Min - 0:N
+- Max - N:M

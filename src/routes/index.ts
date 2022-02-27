@@ -1,8 +1,13 @@
 import type { Express } from 'express';
 import Entusiasta from './enthusiast';
+import Category from './Category';
 
-const setUpRoutes = (app: Express) => {
-    app.use('/enthusiast', new Entusiasta({}).router);
-};
+class SetUpRoutes {
+    constructor(app: Express) {
+        const defaultBasePath = '/api';
+        app.use(`${defaultBasePath}/enthusiast`, new Entusiasta({}).router);
+        app.use(`${defaultBasePath}/category`, new Category({}).router);
+    }
+}
 
-export default setUpRoutes;
+export default SetUpRoutes;

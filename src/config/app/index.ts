@@ -1,9 +1,9 @@
 import express, { Express } from 'express';
-import 'express-async-errors';
-import '../../database';
-import setUpRoutes from '../../routes';
+import SetUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
 import { IApp } from '../interface';
+import '../../database';
+import 'express-async-errors';
 class App implements IApp {
     readonly app: Express;
     constructor() {
@@ -16,7 +16,7 @@ class App implements IApp {
         this.app.use(express.json());
     }
     setRoutes() {
-        setUpRoutes(this.app);
+        new SetUpRoutes(this.app);
     }
     setErrorHandler() {
         this.app.use(handleError);

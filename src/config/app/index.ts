@@ -3,7 +3,7 @@ import 'express-async-errors';
 import '../../database';
 import setUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
-import { IApp } from './interface';
+import { IApp } from '../interface';
 class App implements IApp {
     readonly app: Express;
     constructor() {

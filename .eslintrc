@@ -10,7 +10,7 @@
     ],
     "rules": {
         "no-loops/no-loops": 2, // 2 means throw an ERROR
-        "no-console": 1,
+        "no-console": 0,
         "prettier/prettier": 2,
         "@typescript-eslint/no-unused-vars": 1
     },

@@ -1,5 +1,5 @@
 import database from '../../../database';
-import type { Category } from '@prisma/client';
+import { Category } from '@prisma/client';
 import { ICategoryCreate } from '../../../interfaces';
 import { IServiceExecuteCategory } from '../interface';
 

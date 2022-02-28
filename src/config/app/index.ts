@@ -1,8 +1,9 @@
 import express from 'express';
-import type { Express } from 'express';
+import { Express } from 'express';
 import SetUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
-import type { IApp } from '../interface';
+import { IApp } from '../interface';
+import cors from 'cors';
 import '../../database';
 import 'express-async-errors';
 class App implements IApp {
@@ -14,6 +15,12 @@ class App implements IApp {
         this.setErrorHandler();
     }
     setConfig() {
+        this.app.use(
+            cors({
+                origin: process.env.NODE_ENV == 'prod' ? process.env.ORIGIN : 'http://localhost:8000',
+                allowedHeaders: '*',
+            }),
+        );
         this.app.use(express.json());
     }
     setRoutes() {

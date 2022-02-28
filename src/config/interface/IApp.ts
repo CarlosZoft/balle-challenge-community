@@ -1,4 +1,4 @@
-import type { Express } from 'express';
+import { Express } from 'express';
 
 export interface IApp {
     app: Express;

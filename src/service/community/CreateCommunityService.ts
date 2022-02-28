@@ -2,8 +2,8 @@ import { Create, FindUnique } from './methodsDB';
 import { FindUnique as FindUniqueSerie } from '../serie/methodsDB';
 import { Community } from '@prisma/client';
 import { HttpException } from '../../error';
-import type { ICommunityCreate } from '../../interfaces';
-import type { IServiceExecuteCommunity } from './interface';
+import { ICommunityCreate } from '../../interfaces';
+import { IServiceExecuteCommunity } from './interface';
 
 export class CreateCommunityService implements IServiceExecuteCommunity {
     async execute({ name, description, imageUrl, idSerie }: ICommunityCreate): Promise<Community> {

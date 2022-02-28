@@ -24,7 +24,7 @@ model Serie {
   id          String      @id @default(uuid())
   name        String      @unique
   description String
-  imageUrl    String
+  imageUrl    String?
   yearLaunch  DateTime
   // Date log
   createdAt   DateTime           @default(now())

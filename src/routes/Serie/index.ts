@@ -1,12 +1,12 @@
 import { RouterOptions, Router } from 'express';
-import { CreateCategory, DeleteCategory, EditCategory, FindCategory } from '../../controller';
+import { CreateSerie, DeleteSerie, EditSerie, FindSerie } from '../../controller';
 
-export class Category {
+export class Serie {
     readonly router: Router;
-    readonly createController = new CreateCategory();
-    readonly deleteController = new DeleteCategory();
-    readonly editController = new EditCategory();
-    readonly findController = new FindCategory();
+    readonly createController = new CreateSerie();
+    readonly deleteController = new DeleteSerie();
+    readonly editController = new EditSerie();
+    readonly findController = new FindSerie();
     constructor(options: RouterOptions) {
         this.router = Router(options);
         this.setUpRoutes();

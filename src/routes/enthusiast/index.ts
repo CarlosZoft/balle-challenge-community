@@ -2,7 +2,7 @@ import { RouterOptions, Router } from 'express';
 import { IEnthusiastRoutes } from './interface';
 import { CreateEnthusiast, DeleteEnthusiast, EditEnthusiast, FindEnthusiast } from '../../controller';
 
-class Enthusiast implements IEnthusiastRoutes {
+export class Enthusiast implements IEnthusiastRoutes {
     readonly router: Router;
     readonly createController = new CreateEnthusiast();
     readonly deleteController = new DeleteEnthusiast();
@@ -20,5 +20,3 @@ class Enthusiast implements IEnthusiastRoutes {
         this.router.delete('/:id', this.deleteController.handle);
     }
 }
-
-export default Enthusiast;

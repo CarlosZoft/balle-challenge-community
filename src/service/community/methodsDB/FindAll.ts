@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Community } from '@prisma/client';
-import { IOptionsCommunity, IServiceExecuteCommunity } from '../interface';
+import type { Community } from '@prisma/client';
+import type { IOptionsCommunity, IServiceExecuteCommunity } from '../interface';
 
 export class FindAll implements IServiceExecuteCommunity {
     async execute({ serie, enthusiast }: IOptionsCommunity): Promise<Community[] | null> {

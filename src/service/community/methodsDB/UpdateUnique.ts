@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Community } from '@prisma/client';
-import { ICommunityEdit } from '../interface';
+import type { Community } from '@prisma/client';
+import type { ICommunityEdit } from '../interface';
 
 export class UpdateUnique {
     async execute(id: string, data: ICommunityEdit): Promise<Community> {

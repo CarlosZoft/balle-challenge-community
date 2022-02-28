@@ -1,7 +1,7 @@
 import database from '../../../database';
-import { Community } from '@prisma/client';
-import { ICommunityFind } from '../interface';
-import { IServiceExecuteCommunity } from '../interface';
+import type { Community } from '@prisma/client';
+import type { ICommunityFind } from '../interface';
+import type { IServiceExecuteCommunity } from '../interface';
 
 export class DeleteUnique implements IServiceExecuteCommunity {
     async execute({ id }: ICommunityFind): Promise<Community> {

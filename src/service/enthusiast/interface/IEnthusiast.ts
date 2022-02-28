@@ -5,6 +5,11 @@ export interface IEnthusiastCreate {
     imageUrl?: string;
 }
 
+export interface IEnthusiastWithToken {
+    token: string;
+    refreshToken: string;
+    enthusiast: { name: string; email: string };
+}
 export interface IEnthusiastEdit {
     id?: string;
     name?: string;

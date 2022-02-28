@@ -1,5 +1,5 @@
 import database from '../../../database';
-import type { Community } from '@prisma/client';
+import { Community } from '@prisma/client';
 import { ICommunityEdit } from '../interface';
 
 export class UpdateUnique {

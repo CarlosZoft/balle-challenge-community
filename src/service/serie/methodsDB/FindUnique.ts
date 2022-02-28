@@ -1,5 +1,5 @@
 import database from '../../../database';
-import type { Serie } from '@prisma/client';
+import { Serie } from '@prisma/client';
 import { ISerieFind } from '../interface';
 import { IServiceExecuteSerie } from '../interface';
 

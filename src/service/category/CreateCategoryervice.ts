@@ -10,7 +10,7 @@ export class CreateCategoryService implements IServiceExecuteCategory {
             throw new HttpException('Missing required fields', 400);
         }
 
-        const CategoryAlreadyExists = await new FindUnique().execute({ id: name });
+        const CategoryAlreadyExists = await new FindUnique().execute({ name });
 
         if (CategoryAlreadyExists) {
             throw new HttpException('Category already exists', 400);

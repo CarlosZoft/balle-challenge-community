@@ -12,7 +12,7 @@ export class EditCategoryService {
 
         const existsCategory = await new FindUnique().execute({ id });
         if (!existsCategory) {
-            throw new HttpException(`Category ${name} not found`, 404);
+            throw new HttpException(`Category not found`, 404);
         }
 
         const nameAlreadyExists = await new FindUnique().execute({ name });

@@ -37,12 +37,11 @@ model Serie {
 
 model Community {
   id                  String                @id @default(uuid())
-  name                String
+  name                String    @unique
   description         String
   imageUrl            String?
-  id_enthusiast_owner  String
-  id_serie             String
-  serie     Serie       @relation(fields: [id_serie], references: [id])
+  idSerie             String
+  serie     Serie       @relation(fields: [idSerie], references: [id])
   // Date log
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt

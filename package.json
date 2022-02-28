@@ -40,6 +40,7 @@
         "@types/bcrypt": "^5.0.0",
         "@types/express": "^4.17.13",
         "@types/jest": "^27.0.3",
+        "@types/jsonwebtoken": "^8.5.8",
         "@types/node": "^17.0.21",
         "@types/supertest": "^2.0.11",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -60,6 +61,7 @@
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1",
         "jest": "^27.3.1",
+        "jsonwebtoken": "^8.5.1",
         "onchange": "^7.1.0",
         "pg": "^8.7.3",
         "prisma": "^3.10.0"

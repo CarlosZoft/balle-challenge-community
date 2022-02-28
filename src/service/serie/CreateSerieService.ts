@@ -6,7 +6,6 @@ import { IServiceExecuteSerie } from './interface';
 
 export class CreateSerieService implements IServiceExecuteSerie {
     async execute({ name, description, imageUrl, yearLaunch }: ISerieCreate): Promise<Serie> {
-        console.log({ name, description, imageUrl, yearLaunch });
         if (!name || !description || !yearLaunch) {
             throw new HttpException('Missing required fields', 400);
         }

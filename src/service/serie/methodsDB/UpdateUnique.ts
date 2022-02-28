@@ -1,5 +1,5 @@
 import database from '../../../database';
-import type { Serie } from '@prisma/client';
+import { Serie } from '@prisma/client';
 import { ISerieEdit } from '../interface';
 
 export class UpdateUnique {

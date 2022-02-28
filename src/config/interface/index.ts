@@ -1,1 +1,1 @@
-export type { IApp } from './IApp';
+export { IApp } from './IApp';

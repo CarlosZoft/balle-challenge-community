@@ -1,13 +1,12 @@
 import { RouterOptions, Router } from 'express';
-import { IEnthusiastRoutes } from './interface';
-import { CreateEnthusiast, DeleteEnthusiast, EditEnthusiast, FindEnthusiast } from '../../controller';
+import { CreateCommunity, DeleteCommunity, EditCommunity, FindCommunity } from '../../controller';
 
-export class Enthusiast implements IEnthusiastRoutes {
+export default class Community {
     readonly router: Router;
-    readonly createController = new CreateEnthusiast();
-    readonly deleteController = new DeleteEnthusiast();
-    readonly editController = new EditEnthusiast();
-    readonly findController = new FindEnthusiast();
+    readonly createController = new CreateCommunity();
+    readonly deleteController = new DeleteCommunity();
+    readonly editController = new EditCommunity();
+    readonly findController = new FindCommunity();
     constructor(options: RouterOptions) {
         this.router = Router(options);
         this.setUpRoutes();

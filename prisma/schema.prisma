@@ -8,14 +8,12 @@ datasource db {
 }
 
 model Category {
-  id          String      @id @default(uuid())
   name        String   @unique
   description String
-  // Date log
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  // Relationships
-  Series Serie[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  id          String   @id @default(uuid())
+  Series      Serie[]
 
   @@map("category")
 }
@@ -25,42 +23,44 @@ model Serie {
   name        String      @unique
   description String
   imageUrl    String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
   yearLaunch  DateTime
-  // Date log
-  createdAt   DateTime           @default(now())
-  updatedAt   DateTime           @updatedAt
-  // Relationships
-  categories Category[]
-  comunities   Community[]
+  comunities  Community[]
+  categories  Category[]
+
   @@map("serie")
 }
 
 model Community {
-  id                  String                @id @default(uuid())
-  name                String
-  description         String
-  imageUrl            String?
-  id_enthusiast_owner  String
-  id_serie             String
-  serie     Serie       @relation(fields: [id_serie], references: [id])
-  // Date log
-  createdAt           DateTime           @default(now())
-  updatedAt           DateTime           @updatedAt
-  // Relationships
+  id          String       @id @default(uuid())
+  name        String       @unique
+  description String
+  imageUrl    String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  idSerie     String
+  serie       Serie        @relation(fields: [idSerie], references: [id])
   enthusiasts Enthusiast[]
+
   @@map("community")
 }
 
+model Session {
+  refreshToken String @unique
+
+  @@map("session")
+}
+
 model Enthusiast {
-  id                  String                @id @default(uuid())
-  name                String 
-  email               String                @unique
-  password            String
-  imageUrl            String?
-  // Date log
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  // Relationships
+  id        String      @id @default(uuid())
+  name      String
+  email     String      @unique
+  password  String
+  createdAt DateTime    @default(now())
+  imageUrl  String?
+  updatedAt DateTime    @updatedAt
   community Community[]
+
   @@map("enthusiast")
 }

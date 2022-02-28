@@ -1,7 +1,7 @@
 import { RouterOptions, Router } from 'express';
 import { CreateSerie, DeleteSerie, EditSerie, FindSerie } from '../../controller';
 
-export class Serie {
+export default class Serie {
     readonly router: Router;
     readonly createController = new CreateSerie();
     readonly deleteController = new DeleteSerie();

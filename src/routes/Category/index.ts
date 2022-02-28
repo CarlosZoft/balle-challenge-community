@@ -1,7 +1,7 @@
 import { RouterOptions, Router } from 'express';
 import { CreateCategory, DeleteCategory, EditCategory, FindCategory } from '../../controller';
 
-export class Category {
+export default class Category {
     readonly router: Router;
     readonly createController = new CreateCategory();
     readonly deleteController = new DeleteCategory();

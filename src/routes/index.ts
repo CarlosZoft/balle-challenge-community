@@ -1,4 +1,4 @@
-import type { Express, Request, Response } from 'express';
+import type { Express } from 'express';
 import { Enthusiast } from './enthusiast';
 import { Category } from './Category';
 import { Serie } from './Serie';

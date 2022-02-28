@@ -1,5 +1,4 @@
 import { Create, FindUnique } from './methodsDB';
-import { FindUnique as FindUniqueEnthusiast } from '../enthusiast/methodsDB';
 import { Serie } from '@prisma/client';
 import { HttpException } from '../../error';
 import { ISerieCreate } from '../../interfaces';

@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Serie } from '@prisma/client';
-import { ISerieEdit } from '../interface';
+import type { Serie } from '@prisma/client';
+import type { ISerieEdit } from '../interface';
 
 export class UpdateUnique {
     async execute(id: string, data: ISerieEdit): Promise<Serie> {

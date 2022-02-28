@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import { ControllerHandler } from '../interface';
-import { ICommunityCreate } from '../../interfaces';
 import { CreateCommunityService } from '../../service';
+import type { Request, Response } from 'express';
+import type { ControllerHandler } from '../interface';
+import type { ICommunityCreate } from '../../interfaces';
 
 export class CreateCommunity implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {

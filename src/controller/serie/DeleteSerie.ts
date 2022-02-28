@@ -1,6 +1,6 @@
-import { Request, Response } from 'express';
 import { DeleteSerieService } from '../../service';
-import { ControllerHandler } from '../interface';
+import type { Request, Response } from 'express';
+import type { ControllerHandler } from '../interface';
 export class DeleteSerie implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {
         const { id } = request.params;

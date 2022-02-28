@@ -1,5 +1,6 @@
-import { RouterOptions, Router } from 'express';
 import { CreateLogin, CreateLogout, CreateRefresh } from '../../controller';
+import { Router } from 'express';
+import type { RouterOptions } from 'express';
 
 export default class Login {
     readonly router: Router;

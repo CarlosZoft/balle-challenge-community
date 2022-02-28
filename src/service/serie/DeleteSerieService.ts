@@ -1,7 +1,7 @@
-import { Serie } from '@prisma/client';
 import { DeleteUnique, FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
-import { IServiceExecuteSerie } from './interface';
+import type { Serie } from '@prisma/client';
+import type { IServiceExecuteSerie } from './interface';
 
 export class DeleteSerieService implements IServiceExecuteSerie {
     async execute(id: string): Promise<Serie> {

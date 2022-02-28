@@ -1,7 +1,7 @@
-import { Community } from '@prisma/client';
 import { FindAll, FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
-import { IOptionsCommunity, IServiceExecuteCommunity } from './interface';
+import type { Community } from '@prisma/client';
+import type { IOptionsCommunity, IServiceExecuteCommunity } from './interface';
 
 export class FindCommunityService implements IServiceExecuteCommunity {
     async execute(id: string, { serie }: IOptionsCommunity): Promise<Community[] | Community | null> {

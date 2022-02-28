@@ -2,8 +2,8 @@ import { Create, FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
 import { CreateSessionService } from '../session';
 import { Bcrypt, JWT } from '../../shared';
-import { IEnthusiastCreate } from '../../interfaces';
-import { IServiceExecuteEnthusiast, IEnthusiastWithToken } from './interface';
+import type { IEnthusiastCreate } from '../../interfaces';
+import type { IServiceExecuteEnthusiast, IEnthusiastWithToken } from './interface';
 
 export class CreateEnthusiastService implements IServiceExecuteEnthusiast {
     async execute({ name, email, password, imageUrl }: IEnthusiastCreate): Promise<IEnthusiastWithToken> {

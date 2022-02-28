@@ -1,9 +1,9 @@
-import { Enthusiast } from '@prisma/client';
 import { FindUnique } from './methodsDB';
 import { hash } from 'bcrypt';
 import { HttpException } from '../../error';
-import { IEnthusiastEdit } from './interface';
 import { UpdateUnique } from './methodsDB';
+import type { Enthusiast } from '@prisma/client';
+import type { IEnthusiastEdit } from './interface';
 
 export class EditEnthusiastService {
     async execute(id: string, { name, email, password, imageUrl }: IEnthusiastEdit): Promise<Enthusiast> {

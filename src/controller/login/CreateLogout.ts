@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { CreateLogoutService } from '../../service';
+import type { Request, Response } from 'express';
 
 export class CreateLogout {
     async handle(request: Request, response: Response) {

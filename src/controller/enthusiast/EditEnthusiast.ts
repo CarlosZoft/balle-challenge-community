@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import { IEnthusiastCreate } from '../../interfaces';
-import { ControllerHandler } from '../interface';
 import { EditEnthusiastService } from '../../service';
+import type { Request, Response } from 'express';
+import type { IEnthusiastCreate } from '../../interfaces';
+import type { ControllerHandler } from '../interface';
 export class EditEnthusiast implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {
         const { id } = request.params;

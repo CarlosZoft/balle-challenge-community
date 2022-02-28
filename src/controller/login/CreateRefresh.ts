@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { CreateRefreshService } from '../../service';
+import type { Request, Response } from 'express';
 
 export class CreateRefresh {
     async handle(request: Request, response: Response) {

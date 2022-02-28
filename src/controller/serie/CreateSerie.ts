@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import { ControllerHandler } from '../interface';
-import { ISerieCreate } from '../../interfaces';
 import { CreateSerieService } from '../../service';
+import type { Request, Response } from 'express';
+import type { ControllerHandler } from '../interface';
+import type { ISerieCreate } from '../../interfaces';
 
 export class CreateSerie implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {

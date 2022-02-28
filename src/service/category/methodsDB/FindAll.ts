@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Category } from '@prisma/client';
-import { IServiceExecuteCategory } from '../interface';
+import type { Category } from '@prisma/client';
+import type { IServiceExecuteCategory } from '../interface';
 
 export class FindAll implements IServiceExecuteCategory {
     async execute(): Promise<Category[] | null> {

@@ -1,8 +1,8 @@
 import { Create, FindUnique } from './methodsDB';
-import { Serie } from '@prisma/client';
 import { HttpException } from '../../error';
-import { ISerieCreate } from '../../interfaces';
-import { IServiceExecuteSerie } from './interface';
+import type { Serie } from '@prisma/client';
+import type { ISerieCreate } from '../../interfaces';
+import type { IServiceExecuteSerie } from './interface';
 
 export class CreateSerieService implements IServiceExecuteSerie {
     async execute({ name, description, imageUrl, yearLaunch }: ISerieCreate): Promise<Serie> {

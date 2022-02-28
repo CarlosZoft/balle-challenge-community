@@ -1,8 +1,8 @@
-import { Category } from '@prisma/client';
 import { FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
 import { UpdateUnique } from './methodsDB';
-import { ICategoryEdit } from './interface/ICategory';
+import type { Category } from '@prisma/client';
+import type { ICategoryEdit } from './interface/ICategory';
 
 export class EditCategoryService {
     async execute(id: string, { name, description }: ICategoryEdit): Promise<Category> {

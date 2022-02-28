@@ -1,7 +1,7 @@
 import database from '../../../database';
-import { Enthusiast } from '@prisma/client';
-import { IEnthusiastFind } from '../interface';
-import { IServiceExecuteEnthusiast } from '../interface';
+import type { Enthusiast } from '@prisma/client';
+import type { IEnthusiastFind } from '../interface';
+import type { IServiceExecuteEnthusiast } from '../interface';
 
 export class FindUnique implements IServiceExecuteEnthusiast {
     async execute(data: IEnthusiastFind): Promise<Enthusiast | null> {

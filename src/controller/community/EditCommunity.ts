@@ -1,6 +1,6 @@
-import { Request, Response } from 'express';
-import { ControllerHandler } from '../interface';
 import { EditCommunityService } from '../../service';
+import type { Request, Response } from 'express';
+import type { ControllerHandler } from '../interface';
 
 export class EditCommunity implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {

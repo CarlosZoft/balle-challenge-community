@@ -1,7 +1,7 @@
-import { ICreateWithRefresh, IToken } from './interfaces';
-import { JWT } from '../../shared';
 import { FindUnique } from '../session/methodsDB';
 import { HttpException } from '../../error';
+import { JWT } from '../../shared';
+import type { ICreateWithRefresh, IToken } from './interfaces';
 
 export class CreateRefreshService {
     async execute({ refreshToken }: ICreateWithRefresh) {

@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Category } from '@prisma/client';
-import { ICategoryEdit } from '../interface';
+import type { Category } from '@prisma/client';
+import type { ICategoryEdit } from '../interface';
 
 export class UpdateUnique {
     async execute(id: string, data: ICategoryEdit): Promise<Category> {

@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import { ControllerHandler } from '../interface';
-import { IEnthusiastCreate } from '../../interfaces';
 import { CreateEnthusiastService } from '../../service';
+import type { Request, Response } from 'express';
+import type { ControllerHandler } from '../interface';
+import type { IEnthusiastCreate } from '../../interfaces';
 
 export class CreateEnthusiast implements ControllerHandler {
     async handle(request: Request, response: Response): Promise<void> {

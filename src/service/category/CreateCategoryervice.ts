@@ -1,8 +1,8 @@
 import { Create, FindUnique } from './methodsDB';
-import { Category } from '@prisma/client';
 import { HttpException } from '../../error';
-import { ICategoryCreate } from '../../interfaces';
-import { IServiceExecuteCategory } from './interface';
+import type { Category } from '@prisma/client';
+import type { ICategoryCreate } from '../../interfaces';
+import type { IServiceExecuteCategory } from './interface';
 
 export class CreateCategoryService implements IServiceExecuteCategory {
     async execute({ name, description }: ICategoryCreate): Promise<Category> {

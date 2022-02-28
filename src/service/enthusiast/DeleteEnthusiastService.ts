@@ -1,7 +1,7 @@
 import { DeleteUnique, FindUnique } from './methodsDB';
-import { Enthusiast } from '@prisma/client';
 import { HttpException } from '../../error';
-import { IEnthusiastFind } from './interface';
+import type { Enthusiast } from '@prisma/client';
+import type { IEnthusiastFind } from './interface';
 
 export class DeleteEnthusiastService {
     async execute({ email, id }: IEnthusiastFind): Promise<Enthusiast> {

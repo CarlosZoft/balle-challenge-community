@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { CreateLoginService } from '../../service';
+import type { Request, Response } from 'express';
 
 export class CreateLogin {
     async handle(request: Request, response: Response) {

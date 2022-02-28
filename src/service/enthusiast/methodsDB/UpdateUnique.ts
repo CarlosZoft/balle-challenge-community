@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Enthusiast } from '@prisma/client';
-import { IEnthusiastEdit } from '../interface';
+import type { Enthusiast } from '@prisma/client';
+import type { IEnthusiastEdit } from '../interface';
 
 export class UpdateUnique {
     async execute(id: string, data: IEnthusiastEdit): Promise<Enthusiast> {

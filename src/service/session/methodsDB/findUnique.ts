@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { ISessionCreate } from '../interface';
-import { Session } from '@prisma/client';
+import type { ISessionCreate } from '../interface';
+import type { Session } from '@prisma/client';
 
 export class FindUnique {
     async execute({ refreshToken }: ISessionCreate): Promise<Session | null> {

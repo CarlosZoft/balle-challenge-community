@@ -1,8 +1,8 @@
-import { ICreateLogin } from './interfaces';
+import { Bcrypt, JWT } from '../../shared';
+import { CreateSessionService } from '../session';
 import { FindUnique } from '../enthusiast/methodsDB';
 import { HttpException } from '../../error';
-import { CreateSessionService } from '../session';
-import { Bcrypt, JWT } from '../../shared';
+import type { ICreateLogin } from './interfaces';
 
 export class CreateLoginService {
     async execute({ email, password }: ICreateLogin) {

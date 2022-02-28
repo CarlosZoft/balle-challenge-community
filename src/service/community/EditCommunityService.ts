@@ -1,8 +1,8 @@
-import { Community } from '@prisma/client';
 import { FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
 import { UpdateUnique } from './methodsDB';
-import { ICommunityEdit } from './interface/ICommunity';
+import type { Community } from '@prisma/client';
+import type { ICommunityEdit } from './interface/ICommunity';
 
 export class EditCommunityService {
     async execute(id: string, { name, description, imageUrl }: ICommunityEdit): Promise<Community> {

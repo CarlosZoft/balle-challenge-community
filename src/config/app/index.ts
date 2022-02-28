@@ -1,11 +1,11 @@
+import cors from 'cors';
 import express from 'express';
-import { Express } from 'express';
 import SetUpRoutes from '../../routes';
 import { handleError } from '../../middlewares';
-import { IApp } from '../interface';
-import cors from 'cors';
 import '../../database';
 import 'express-async-errors';
+import type { Express } from 'express';
+import type { IApp } from '../interface';
 class App implements IApp {
     readonly app: Express;
     constructor() {

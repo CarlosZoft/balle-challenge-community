@@ -1,6 +1,6 @@
-import { ICreateWithRefresh } from './interfaces';
-import { FindUnique, DeleteSession } from '../session/methodsDB';
+import { DeleteSession, FindUnique } from '../session/methodsDB';
 import { HttpException } from '../../error';
+import type { ICreateWithRefresh } from './interfaces';
 
 export class CreateLogoutService {
     async execute({ refreshToken }: ICreateWithRefresh) {

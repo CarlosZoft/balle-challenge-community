@@ -1,7 +1,7 @@
-import { Category } from '@prisma/client';
 import { DeleteUnique, FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
-import { IServiceExecuteCategory } from './interface';
+import type { Category } from '@prisma/client';
+import type { IServiceExecuteCategory } from './interface';
 
 export class DeleteCategoryService implements IServiceExecuteCategory {
     async execute(id: string): Promise<Category> {

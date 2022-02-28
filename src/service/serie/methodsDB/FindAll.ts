@@ -1,6 +1,6 @@
 import database from '../../../database';
-import { Serie } from '@prisma/client';
-import { IServiceExecuteSerie } from '../interface';
+import type { Serie } from '@prisma/client';
+import type { IServiceExecuteSerie } from '../interface';
 
 export class FindAll implements IServiceExecuteSerie {
     async execute(): Promise<Serie[]> {

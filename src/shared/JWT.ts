@@ -1,5 +1,6 @@
-import { sign, verify, JwtPayload, VerifyErrors, Secret } from 'jsonwebtoken';
 import { HttpException } from '../error';
+import { sign, verify } from 'jsonwebtoken';
+import type { JwtPayload, VerifyErrors, Secret } from 'jsonwebtoken';
 
 export class JWT {
     static createToken(payload: JwtPayload, options?: object) {

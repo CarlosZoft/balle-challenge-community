@@ -1,5 +1,6 @@
-import { RouterOptions, Router } from 'express';
 import { CreateCategory, DeleteCategory, EditCategory, FindCategory } from '../../controller';
+import { Router } from 'express';
+import type { RouterOptions } from 'express';
 
 export default class Category {
     readonly router: Router;

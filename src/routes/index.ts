@@ -1,9 +1,9 @@
-import { Express } from 'express';
-import Enthusiast from './Enthusiast';
 import Category from './Category';
-import Serie from './Serie';
 import Community from './Community';
+import Enthusiast from './Enthusiast';
 import Login from './Login';
+import Serie from './Serie';
+import type { Express } from 'express';
 
 class SetUpRoutes {
     constructor(app: Express) {

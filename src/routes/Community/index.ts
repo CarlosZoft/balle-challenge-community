@@ -1,5 +1,6 @@
-import { RouterOptions, Router } from 'express';
 import { CreateCommunity, DeleteCommunity, EditCommunity, FindCommunity } from '../../controller';
+import { Router } from 'express';
+import type { RouterOptions } from 'express';
 
 export default class Community {
     readonly router: Router;

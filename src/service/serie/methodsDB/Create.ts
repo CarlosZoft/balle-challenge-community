@@ -1,7 +1,7 @@
 import database from '../../../database';
-import { Serie } from '@prisma/client';
-import { ISerieCreate } from '../../../interfaces';
-import { IServiceExecuteSerie } from '../interface';
+import type { Serie } from '@prisma/client';
+import type { ISerieCreate } from '../../../interfaces';
+import type { IServiceExecuteSerie } from '../interface';
 
 export class Create implements IServiceExecuteSerie {
     async execute(data: ISerieCreate): Promise<Serie> {

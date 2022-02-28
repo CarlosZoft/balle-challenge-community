@@ -1,8 +1,8 @@
-import { Serie } from '@prisma/client';
 import { FindUnique } from './methodsDB';
 import { HttpException } from '../../error';
 import { UpdateUnique } from './methodsDB';
-import { ISerieEdit } from './interface/ISerie';
+import type { Serie } from '@prisma/client';
+import type { ISerieEdit } from './interface/ISerie';
 
 export class EditSerieService {
     async execute(id: string, { name, description, imageUrl, yearLaunch, owner }: ISerieEdit): Promise<Serie> {

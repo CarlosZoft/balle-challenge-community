@@ -1,5 +1,6 @@
-import { RouterOptions, Router } from 'express';
 import { CreateSerie, DeleteSerie, EditSerie, FindSerie } from '../../controller';
+import { Router } from 'express';
+import type { RouterOptions } from 'express';
 
 export default class Serie {
     readonly router: Router;

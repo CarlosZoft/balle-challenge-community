@@ -1,7 +1,7 @@
 import database from '../../../database';
-import { Enthusiast } from '@prisma/client';
-import { IEnthusiastCreate } from '../../../interfaces';
-import { IServiceExecuteEnthusiast } from '../interface';
+import type { Enthusiast } from '@prisma/client';
+import type { IEnthusiastCreate } from '../../../interfaces';
+import type { IServiceExecuteEnthusiast } from '../interface';
 
 export class Create implements IServiceExecuteEnthusiast {
     async execute(data: IEnthusiastCreate): Promise<Enthusiast> {

@@ -26,6 +26,8 @@ jobs:
               run: npm install -g yarn
             - name: Install dependencies
               run: yarn install --frozen-lockfile
+            - name: generate prisma
+              run: yarn prisma generate
             - name: Build project
               run: yarn build
             # - name: running tests

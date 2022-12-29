@@ -25,12 +25,6 @@ jobs:
             - name: Upgrade NPM
               run: npm install -g yarn
             - name: Install dependencies
-              run: yarn install --frozen-lockfile
-            - name: generate prisma
-              run: yarn prisma generate
-            - name: Build project
-              run: yarn build
-            # - name: running tests
-            #   run: npm test
+              run: yarn install
             - name: running lint
               run: yarn lint
